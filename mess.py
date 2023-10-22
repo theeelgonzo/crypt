@@ -14,6 +14,10 @@ def encMessage(message, key):
     newString = "".join(newString)
     print(newString)
 
+    textFile = open("messages/message.txt", "w")
+    textFile.write(newString)
+    textFile.close()
+
 
 encMessage("Hello, World", 3)
 
