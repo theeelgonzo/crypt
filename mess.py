@@ -14,12 +14,23 @@ def encMessage(message, key):
     newString = "".join(newString)
     print(newString)
 
-    textFile = open("messages/message.txt", "w")
+    textFile = open("messages/message.txt", "a")
     textFile.write(newString)
     textFile.close()
 
 
-encMessage("Hello, World", 3)
+#encMessage("Hello, World", 3)
 
-encMessage("Hello, World", 10)
+#encMessage("Hello, World", 10)
 
+def recMessage():
+    message = input("Input your message: ")
+    key = int(input("Define your offset key as an integer: "))
+    if type(key) is int:
+        print("Encrypthing message.")
+        encMessage(message, key)
+    else:
+        print(type(key))
+        print("Please use an integer for the offset key.")
+
+recMessage()
